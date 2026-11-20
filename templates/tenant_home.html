@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}{{ tenant.name }} · Uzuritech{% endblock %}
+{% block content %}
+  <h1>{{ tenant.name }}</h1>
+  <p class="muted">{{ tenant.get_kind_display }} · {{ tenant.subdomain }}</p>
+  <dl>
+    {% for key, value in stats.items %}
+      <dt>{{ key|capfirst }}</dt><dd>{{ value }}</dd>
+    {% endfor %}
+  </dl>
+{% endblock %}
